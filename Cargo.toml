@@ -1,0 +1,20 @@
+[package]
+name = "rust-actix-api"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "*"
+actix-rt = "*"
+env_logger = "*"
+log = "*"
+chrono = { version = "*", features = ["serde"] }
+dotenv = "*"
+anyhow = "*"
+serde = { version = "*", features = ["derive"] }
+serde_json = "*"
+diesel = { version = "*", features = ["postgres", "chrono", "r2d2"] }
+actix-cors = "0.6.1"
+actix-session = { version = "0.6.2", features = ["cookie-session"] }
