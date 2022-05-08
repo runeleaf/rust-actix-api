@@ -1,9 +1,8 @@
 # env development
 FROM rust:1.60.0-slim as development
 WORKDIR /opt/app
-RUN apt update -qq && apt install -y build-essential libpq-dev vim apt-transport-https
+RUN apt update -qq && apt install -y libssl-dev build-essential libpq-dev vim apt-transport-https
 RUN cargo install cargo-watch
-RUN cargo install cargo-edit
 RUN cargo install diesel_cli --no-default-features --features postgres
 RUN rustup component add rustfmt
 COPY . .
